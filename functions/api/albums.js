@@ -8,7 +8,7 @@ export const onRequestGet = async function (context) {
             INNER JOIN artists ON artists.id = albums.artist`
     );
 
-    const { results } = await smt.all();
+    const { results } = await stmt.all();
 
     return new Response (
         JSON.stringify(results, null, 2),
