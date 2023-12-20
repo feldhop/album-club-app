@@ -1,6 +1,4 @@
-var src_default = {
-  async fetch(request, env) {
-    
+export const onRequestGet = async function (request, env) {
     const { DATABASE } = env;
     const stmt = DATABASE.prepare(
         `SELECT
@@ -11,19 +9,14 @@ var src_default = {
             INNER JOIN artists ON artists.id = albums.artist`
     );
 
-    const { results } = await stmt.all();
+    const { results } = await smt.all();
 
     return new Response (
-      JSON.stringify(results, null, 2),
-      {
-        headers: {
-          "content-type": "text/json"
+        JSON.stringify(results, null, 2),
+        {
+            headers: {
+            "content-type": "text/json"
+            }
         }
-      }
     );
-  }
-};
-
-export {
-  src_default as default
-};
+}
