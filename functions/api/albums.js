@@ -10,7 +10,7 @@ export const onRequestGet = async function (context) {
 
     const { results } = await stmt.all();
 
-    return new Response (
+    return new Response (results);
         JSON.stringify(results, null, 2),
         {
             headers: {
