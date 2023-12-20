@@ -1,6 +1,5 @@
-export const onRequestGet = async function (request, env) {
-    const { DATABASE } = env;
-    const stmt = DATABASE.prepare(
+export const onRequestGet = async function (context) {
+    const stmt = context.env.DATABASE.prepare(
         `SELECT
             albums.id, 
             albums.name AS albumname, 
