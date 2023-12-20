@@ -11,7 +11,7 @@ var src_default = {
             INNER JOIN artists ON artists.id = albums.artist`
     );
 
-    const { results } = await router.route(request);
+    const { results } = await stmt.all();
 
     return new Response (
       JSON.stringify(results, null, 2),
