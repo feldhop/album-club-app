@@ -22,7 +22,7 @@ const Albums = () => {
             {albums.map(album => (
                 <div key={album.id}>
                     <h2>
-                        <Link to={`/album/${album.id}`}>{album.title}</Link>
+                        <Link to={`/album/${album.id}`}>{album.albumname}</Link> by {album.artistname}
                     </h2>
                 </div>
             ))}
